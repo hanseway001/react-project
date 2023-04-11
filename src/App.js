@@ -1,13 +1,13 @@
 // import './App.css';
 import { RouterProvider, createBrowserRouter} from 'react-router-dom';
-import Calendar from './PAGES/Calendar'
-import MyDay from './PAGES/MyDay'
-import Home from './PAGES/Home'
-import About from './PAGES/About'
+import Calendar from './pages/Calendar'
+import MyDay from './pages/MyDay'
+import Home from './pages/Home'
+import About from './pages/About'
 
 const router = createBrowserRouter([
   {
-    path: "/home",
+    path: "/",
     element: <Home />,
   },
   {
