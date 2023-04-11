@@ -1,4 +1,4 @@
-// import './App.css';
+import './App.css';
 import { RouterProvider, createBrowserRouter} from 'react-router-dom';
 import Calendar from './pages/Calendar'
 import MyDay from './pages/MyDay'
@@ -36,22 +36,5 @@ function App() {
   );
 }
 
-function NavBar() {
-  return (
-    <nav>
-      <link to="/">Home</link>
-      {/* <link to="./PAGES/Calendar">Calendar</link> */}
-      <link to="/about">About</link>
-    </nav>
-  )
-}
-
-// function Home() {
-//   return <div>home</div>
-// }
-
-// function About() {
-//   return <div>about</div>
-// }
 
 export default App;

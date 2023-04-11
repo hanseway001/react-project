@@ -1,5 +1,4 @@
 import React from "react";
-// import PAGES from "../PAGES";
 import { Outlet, Link } from "react-router-dom";
 
 export const styles = {
