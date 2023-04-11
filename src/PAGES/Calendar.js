@@ -1,4 +1,4 @@
-import { styles } from "./Home";
+// import { styles } from "./Home";
 
 export default function ApplePage({ handleBack }) {
   return (
