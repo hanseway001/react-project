@@ -1,4 +1,5 @@
 import React from "react";
+import { Outlet, Link } from "react-router-dom";
 
 export const styles = {
   link: {
@@ -12,12 +13,15 @@ export default function Home({ changePage }) {
     <div className="App">
       <h1>Welcome to my website</h1>
       <h4>Pages:</h4>
-      <li style={styles.link} onClick={() => changePage()}>
-        Apple Page
-      </li>
-      <li style={styles.link} onClick={() => changePage()}>
-        Cat Page
-      </li>
+      <Link style={styles.link} to={'/calendar'}>
+        Calendar
+      </Link>
+      <Link style={styles.link} to={'/myday'}>
+        MyDay
+      </Link>
+      <Link style={styles.link} to={'/about'}>
+        About
+      </Link>
     </div>
   );
 }
