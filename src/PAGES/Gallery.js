@@ -1,6 +1,6 @@
 // import { styles } from "./Home";
 
-export default function CatPage({ handleBack }) {
+export default function Gallery({ handleBack }) {
   return (
     <main>
       <h1>Cat!</h1>
