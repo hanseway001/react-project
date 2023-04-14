@@ -1,7 +1,7 @@
 import './App.css';
 import { RouterProvider, createBrowserRouter} from 'react-router-dom';
-import Calendar from './pages/Calendar'
-import MyDay from './pages/MyDay'
+import Expense from './pages/Expense'
+import Gallery from './pages/Gallery'
 import Home from './pages/Home'
 import About from './pages/About'
 
@@ -15,12 +15,12 @@ const router = createBrowserRouter([
     element: <About />,
   },
   {
-    path: "/myday",
-    element: <MyDay />,
+    path: "/gallery",
+    element: <Gallery />,
   },
   {
-    path: "/calendar",
-    element: <Calendar />,
+    path: "/expense",
+    element: <Expense />,
   }
 ]);
 
@@ -28,7 +28,7 @@ const router = createBrowserRouter([
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
+      <header className="">
       </header>
       <RouterProvider router={router}/>
 

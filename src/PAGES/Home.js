@@ -13,11 +13,11 @@ export default function Home({ changePage }) {
     <div className="App">
       <h1>Welcome to my website</h1>
       <h4>Pages:</h4>
-      <Link style={styles.link} to={'/calendar'}>
-        Calendar
+      <Link style={styles.link} to={'/expense'}>
+        Expenses
       </Link>
-      <Link style={styles.link} to={'/myday'}>
-        MyDay
+      <Link style={styles.link} to={'/gallery'}>
+        Gallery
       </Link>
       <Link style={styles.link} to={'/about'}>
         About

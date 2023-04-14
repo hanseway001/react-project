@@ -1,9 +1,9 @@
 import { styles } from "./Home";
 
-export default function ApplePage({ handleBack }) {
+export default function Expense({ handleBack }) {
   return (
     <main>
-      <h1>Apple!</h1>
+      <h1>Expense!</h1>
       <div onClick={handleBack} style={styles.link}>
         Back to home
       </div>

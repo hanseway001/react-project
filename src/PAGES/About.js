@@ -1,9 +1,9 @@
 import { styles } from "./Home";
 
-export default function ApplePage({ handleBack }) {
+export default function About({ handleBack }) {
   return (
     <main>
-      <h1>bannanna!</h1>
+      <h1>About!</h1>
       <div onClick={handleBack} style={styles.link}>
         Back to home
       </div>
