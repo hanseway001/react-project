@@ -1,40 +1,76 @@
 import { useState, useContext } from "react";
-import { useTransitionDispatch } from "./transactionContext";
+// import { TransitionDispatchContext , TransactionsContext } from "./transactionContext";
+
 
 export default function AddTransaction() {
 
-    const [inputValue, setInputValue] = useState(" ")
-    const [transactionArray, setTransactionArray] = useState([]);
+    const [inputDescriptionValue, setInputDescriptionValue] = useState("")
+    const [inputAmountValue, setInputAmountValue] = useState("")
+    // const [state, dispatch] = useReducer(reducer, initialState);
+    const { transactionArray } = state;
 
-    const handleChange = (event) => {
+    const handleDescriptionChange = (event) => {
         const value = event.target.value;
-        setInputValue(value);
+        setInputDescriptionValue(value);
+    };
+
+    const handleAmountChange = (event) => {
+        const value = event.target.value;
+        setInputAmountValue(value);
     };
     
     function handleAdd() {
-        setTransactionArray([...transactionArray, inputValue]);
-        setInputValue('');
+        transactionDispatch({
+            type: "ADD_TRANSACTION",
+            // id: 0,
+            description: inputDescriptionValue,
+            amount: inputAmountValue
+        })
+        // setTransactionArray([...transactionArray, {
+        //     id: transactionArray.length,
+        //     description: inputDescriptionValue,
+        //     amount: inputAmountValue 
+        // }]);
+
+        setInputDescriptionValue('');
+        setInputAmountValue('');
     }
 
-    function handleDelete(index) {
-    // console.log(transactionArray);
-    // console.log(index);
-    let newTransactionArray = transactionArray.filter((transaction, index) => {
-      console.log('trans ' + transaction + ' index ' + index);
-      
-    });
-    console.log(newTransactionArray);
-  }
+    function handleDelete(transactionId) {
+        dispatch({ type: 'DELETE_TRANSACTION', id: transactionId})
+        // console.log("transactionId", transactionId);
+        // let newTransactionArray = transactionArray.filter(
+        //   (transactionObject) => transactionObject.id !== transactionId
+        // );
+        // setTransactionArray(newTransactionArray);
+    }
 
     const transactionItems = transactionArray.map((transaction, index) => {
-        return <div key={index}>{transaction}<button onClick={handleDelete(index)}>Delete</button></div>
-    })
+        return (
+        <div key={index}>
+            {transaction.description}
+            {transaction.amount}
+            <button onClick={() => handleDelete(transaction.id)}>Delete</button>
+        </div>
+        );
+    });
 
     return (
         <div>
             <div>
-                <input type="text" placeholder="Add Transaction" value={inputValue} onChange={handleChange}></input>
-                <button onClick={handleAdd}>Add</button>
+                <input
+                    type="text" 
+                    placeholder="Transaction Description" 
+                    value={inputDescriptionValue} 
+                    onChange={handleDescriptionChange}
+                ></input>
+                <input 
+                    type="text" 
+                    placeholder="Transaction Amount" 
+                    value={inputAmountValue} 
+                    onChange={handleAmountChange}
+                ></input>
+                <button onClick={handleAdd}>Add Transaction</button>
             </div>
              {transactionItems}
 

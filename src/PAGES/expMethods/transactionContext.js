@@ -1,27 +1,25 @@
 import { createContext, useContext, useReducer } from 'react';
+//provides read only form of data
+export const TransactionContext = createContext([]);
+//set the actions that modify the context
+export const TransactionDispatchContext = createContext(null);
 
-const TransactionContext = createContext(null);
+// function transactionsReducer(state, action) {
+//   switch ( action ) {
+//     case  "ADD_TRANSACTION":
+//       return {
+        
+//       }
+//   }
+// }
 
-const TransactionDispatchContext = createContext(null);
 
-export function TransactionProvider() {
-    const [transactions, dispatch] = useReducer(transactionsReducer, initialTransactions);
 
-    return 'more bunnies';
-}
 
-export function useTransactions() {
-    return useContext(TransactionContext);
-  }
-  
-  export function useTransactionDispatch() {
-    return useContext(TransactionDispatchContext);
-  }
+// export function TransactionProvider() {
+    
 
-  function trasactionReducer (transactions , action) {
-    switch (action.type) {
-        case 'added': {
-            return 
-        }
-    }
-  }
+//     return 'more bunnies';
+// }
+
+
