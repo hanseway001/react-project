@@ -1,13 +1,13 @@
-import { useState, useContext } from "react";
-// import { TransitionDispatchContext , TransactionsContext } from "./transactionContext";
-
+import { useState,  } from "react";
+import { useTransactionDispatch } from "./transactionContext";
 
 export default function AddTransaction() {
 
     const [inputDescriptionValue, setInputDescriptionValue] = useState("")
     const [inputAmountValue, setInputAmountValue] = useState("")
-    // const [state, dispatch] = useReducer(reducer, initialState);
-    const { transactionArray } = state;
+    // const [state] = useReducer(reducer, initialState);
+    const dispatch = useTransactionDispatch();
+    // const { transactionArray } = sate;
 
     const handleDescriptionChange = (event) => {
         const value = event.target.value;
@@ -20,40 +20,14 @@ export default function AddTransaction() {
     };
     
     function handleAdd() {
-        transactionDispatch({
+        dispatch({
             type: "ADD_TRANSACTION",
-            // id: 0,
             description: inputDescriptionValue,
             amount: inputAmountValue
         })
-        // setTransactionArray([...transactionArray, {
-        //     id: transactionArray.length,
-        //     description: inputDescriptionValue,
-        //     amount: inputAmountValue 
-        // }]);
-
         setInputDescriptionValue('');
         setInputAmountValue('');
     }
-
-    function handleDelete(transactionId) {
-        dispatch({ type: 'DELETE_TRANSACTION', id: transactionId})
-        // console.log("transactionId", transactionId);
-        // let newTransactionArray = transactionArray.filter(
-        //   (transactionObject) => transactionObject.id !== transactionId
-        // );
-        // setTransactionArray(newTransactionArray);
-    }
-
-    const transactionItems = transactionArray.map((transaction, index) => {
-        return (
-        <div key={index}>
-            {transaction.description}
-            {transaction.amount}
-            <button onClick={() => handleDelete(transaction.id)}>Delete</button>
-        </div>
-        );
-    });
 
     return (
         <div>
@@ -72,7 +46,7 @@ export default function AddTransaction() {
                 ></input>
                 <button onClick={handleAdd}>Add Transaction</button>
             </div>
-             {transactionItems}
+             {/* {transactionItems} */}
 
         </div>
 
