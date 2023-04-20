@@ -5,6 +5,7 @@ import Gallery from './pages/Gallery'
 import Home from './pages/Home'
 import About from './pages/About'
 
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -31,7 +32,6 @@ function App() {
       <header className="">
       </header>
       <RouterProvider router={router}/>
-
     </div>
   );
 }
