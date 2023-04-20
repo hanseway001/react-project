@@ -1,6 +1,7 @@
 import { useState,  } from "react";
 import { useTransactionDispatch } from "./transactionContext";
 
+
 export default function AddTransaction() {
 
     const [inputDescriptionValue, setInputDescriptionValue] = useState("")
