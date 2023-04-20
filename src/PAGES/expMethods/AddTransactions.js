@@ -46,8 +46,6 @@ export default function AddTransaction() {
                 ></input>
                 <button onClick={handleAdd}>Add Transaction</button>
             </div>
-             {/* {transactionItems} */}
-
         </div>
 
     )
