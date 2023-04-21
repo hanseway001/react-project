@@ -1,4 +1,5 @@
 import { useTransaction, useTransactionDispatch } from './transactionContext'
+import { Button } from '@mui/material';
 
 export default function TransactionList() {
     const transactionArray = useTransaction();
@@ -8,22 +9,25 @@ export default function TransactionList() {
         dispatch({ type: 'DELETE_TRANSACTION', id: transactionId })
     }
 
-    console.log(transactionArray);
-    return (
-        <ul>
+    // console.log(transactionArray);
+    return ( 
+        <div className='history'> 
+            <div>TRANSACTION HISTORY</div>
             {transactionArray?.map(trans => (
-                <li key={trans.id}>
-                    <div key={trans.id}>
-                        {trans.description}
-                        {trans.amount}
-                        <button onClick={
-                            () => 
-                            handleDelete(trans.id)
-                        }>Delete</button>
+            <div className='transItem' key={trans.id}>
+                <div className='description'>
+                    <div>
+                    {trans.description}
                     </div>
-                </li>
-            ))}
-        </ul>
+                    <div>
+                    {trans.amount}
+                    </div>
+                </div>
+                <Button size='small' onClick={() => handleDelete(trans.id)}>Delete</Button>
+            </div>
+        ))}
+        </div>
     )
 }
+
 

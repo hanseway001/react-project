@@ -16,8 +16,9 @@ export function TransactionProvider({ children }) {
  
   <TransactionContext.Provider value={state}>
   <TransactionDispatchContext.Provider value={dispatch}>
-
-    {children}
+    <div className='expenseApp'>
+      {children}
+    </div>
  
   </TransactionDispatchContext.Provider>
   </TransactionContext.Provider>
@@ -44,13 +45,20 @@ function transactionReducer(state, action) {
           description: action.description,
           amount: action.amount
       }];
-
-      case "DELETE_TRANSACTION":
-        return state.filter(
-          (transactionObject) => transactionObject.id !== action.id
-        );
+    case "DELETE_TRANSACTION":
+      return state.filter(
+        (transactionObject) => transactionObject.id !== action.id
+      );
+    // case "SUM_TRANSACTIONS":
+    //   let total = 0
+    //   state.forEach(element => {
+    //     // element > 0 ? total =- element : total =- element;
+    //     total += element;
+    //     // console.log(total);
+    //   }); 
+      // return total;
         
-      default: throw new Error("Invalid Action Type");
+    default: throw new Error("Invalid Action Type");
   }
 }
 

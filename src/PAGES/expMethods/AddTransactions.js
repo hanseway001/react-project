@@ -1,6 +1,7 @@
 import { useState,  } from "react";
 import { useTransactionDispatch } from "./transactionContext";
-
+import Button from '@mui/material/Button';
+import { TextField } from "@mui/material";
 
 export default function AddTransaction() {
 
@@ -17,7 +18,7 @@ export default function AddTransaction() {
 
     const handleAmountChange = (event) => {
         const value = event.target.value;
-        setInputAmountValue(value);
+        setInputAmountValue(Number(value));
     };
     
     function handleAdd() {
@@ -31,21 +32,25 @@ export default function AddTransaction() {
     }
 
     return (
-        <div>
+        <div className="addTransaction">
+            <div>ADD TRANSACTION</div>
             <div>
-                <input
+                <TextField
                     type="text" 
+                    size="small"
+                    required
                     placeholder="Transaction Description" 
                     value={inputDescriptionValue} 
                     onChange={handleDescriptionChange}
-                ></input>
-                <input 
-                    type="text" 
+                ></TextField>
+                <TextField 
+                    type="number" 
+                    size="small"
                     placeholder="Transaction Amount" 
                     value={inputAmountValue} 
                     onChange={handleAmountChange}
-                ></input>
-                <button onClick={handleAdd}>Add Transaction</button>
+                ></TextField>
+                <Button onClick={handleAdd}>Add Transaction</Button>
             </div>
         </div>
 
