@@ -11,3 +11,21 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+h1 {
+  margin: 50px 0;
+}
+
+.buttonContainer {
+  margin: 50px 0;
+}
+
+img {
+margin: 10px 5px;
+height: 300px;
+}
+
+button{
+  border: #000 solid 2px;
+  /* margin-right: 5px; */
+}
