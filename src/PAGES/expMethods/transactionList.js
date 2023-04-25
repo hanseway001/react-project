@@ -12,18 +12,20 @@ export default function TransactionList() {
     // console.log(transactionArray);
     return ( 
         <div className='history'> 
-            <div>TRANSACTION HISTORY</div>
+            <div className='titleBorder'><h2>TRANSACTION HISTORY</h2></div>
             {transactionArray?.map(trans => (
             <div className='transItem' key={trans.id}>
                 <div className='description'>
                     <div>
                     {trans.description}
                     </div>
-                    <div>
+                    <div className={(trans.amount>0) ? 'pos' : 'neg'} >
                     {trans.amount}
                     </div>
                 </div>
-                <Button size='small' onClick={() => handleDelete(trans.id)}>Delete</Button>
+                <div className='delete'>
+                    <Button variant="contained" size='small' onClick={() => handleDelete(trans.id)}>Delete</Button>
+                </div>
             </div>
         ))}
         </div>

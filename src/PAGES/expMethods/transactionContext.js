@@ -35,8 +35,7 @@ export function useTransactionDispatch() {
 }
 
 function transactionReducer(state, action) {
-  // console.log('this is state ' + state)
-  // console.log("this is action " + action)
+
   switch ( action.type ) {
     case  "ADD_TRANSACTION":
       return [
@@ -49,14 +48,6 @@ function transactionReducer(state, action) {
       return state.filter(
         (transactionObject) => transactionObject.id !== action.id
       );
-    // case "SUM_TRANSACTIONS":
-    //   let total = 0
-    //   state.forEach(element => {
-    //     // element > 0 ? total =- element : total =- element;
-    //     total += element;
-    //     // console.log(total);
-    //   }); 
-      // return total;
         
     default: throw new Error("Invalid Action Type");
   }

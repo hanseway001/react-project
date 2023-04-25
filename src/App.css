@@ -6,6 +6,11 @@ main.div {
 
 
 /* --------------------------------------------------------------------------------------- */
+h2 {
+  margin: 0 0 .5em 0;
+  text-align: left;
+}
+
 .App {
   display: flex;
   flex-direction: column;
@@ -33,13 +38,16 @@ main.div {
 .addTransaction {
   display: flex;
   flex-direction: column;
-  width: fit-content;
+  width: 90%;
   align-items: center;
   justify-content: center;
   border: 1px solid black;
   border-radius: 10px;
   padding: 2em;
-  width: 90%;
+}
+
+.change {
+  width: 100%;
 }
 
 .history {
@@ -79,6 +87,10 @@ main.div {
   width: 90%;
 }
 
+.titleBorder {
+  border-bottom: 1px solid grey;
+}
+
 .balance {
   border: 1px solid black;
   border-radius: 10px;
@@ -87,10 +99,36 @@ main.div {
   width: 90%;
 }
 
-.posBal {
-
+.delete {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.negBal {
+.incExp {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1em;
+}
 
+.inputs {
+  width: 100%;
+  margin: 1em 0 .5em 0
+}
+
+.bal {
+  font-size: 2.5em;
+}
+
+.pos {
+  color: green;  
+}
+
+.neg {
+  color: red;
+}
+
+.balSize {
+  font-size: 2em;
 }

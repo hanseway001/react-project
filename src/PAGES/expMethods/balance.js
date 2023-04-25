@@ -34,20 +34,21 @@ export default function Balance() {
 
     return (
         <div className='balance'>
+            <div className='titleBorder'><h2>YOUR BALANCE</h2></div>
             <div className='total'>
-                <div>YOUR BBALANCE</div>
-                <div>
+                <h3>TOTAL BALANCE</h3>
+                <div className='bal'>
                     {total}
                 </div>
             </div>
-            <div>
+            <div className='incExp'>
                 <div className='posBal'>
                     <div>TOTAL INCOME</div>
-                    {posTotal}
+                    <div className='pos balSize'>{posTotal}</div>
                 </div>
                 <div className='negBal'>
                     <div>TOTAL EXPENSE</div>
-                    {negTotal}
+                    <div className='neg balSize'>{negTotal}</div>
                 </div>
             </div>
 

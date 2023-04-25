@@ -33,26 +33,30 @@ export default function AddTransaction() {
 
     return (
         <div className="addTransaction">
-            <div>ADD TRANSACTION</div>
+            <div className="titleBorder change"><h2>ADD TRANSACTION</h2></div>
             <div>
-                <TextField
-                    type="text" 
-                    size="small"
-                    required
-                    placeholder="Transaction Description" 
-                    value={inputDescriptionValue} 
-                    onChange={handleDescriptionChange}
-                ></TextField>
-                <TextField 
-                    type="number" 
-                    size="small"
-                    placeholder="Transaction Amount" 
-                    value={inputAmountValue} 
-                    onChange={handleAmountChange}
-                ></TextField>
-                <Button onClick={handleAdd}>Add Transaction</Button>
+                <div className="inputs">
+                    <TextField
+                        type="text" 
+                        size="small"
+                        required
+                        placeholder="Enter Description" 
+                        value={inputDescriptionValue} 
+                        onChange={handleDescriptionChange}
+                    ></TextField>
+                </div>
+                <div className="inputs">
+                    <TextField 
+                        type="number" 
+                        size="small"
+                        placeholder="Enter Amount" 
+                        value={inputAmountValue} 
+                        onChange={handleAmountChange}
+                    ></TextField>
+                </div>
+                <h4>* Enter Expenses With Negative Numbers</h4>
+                <Button variant="contained" onClick={handleAdd}>Add Transaction</Button>
             </div>
         </div>
-
     )
 }
