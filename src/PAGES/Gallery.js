@@ -121,7 +121,6 @@ export default function Gallery({ handleBack }) {
         <Button className='buttonStyle' variant="outlined" onClick={getListOfImages2}>more cats</Button>
         <Button className='buttonStyle' variant="outlined" onClick={getListOfImages3}>abyssinian (20)</Button>
         <Button className='buttonStyle' variant="outlined" onClick={getListOfImages4}> aegean (5)</Button>
-        {/* <Button variant="outlined" onClick={change1}> size change (5)</Button> */}
       </div>
       <div className="maincontent">
       <div id="grid" className="imgrid"></div>
