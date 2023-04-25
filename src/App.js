@@ -5,11 +5,6 @@ import Gallery from './pages/Gallery';
 import Home from './pages/Home';
 import About from './pages/About';
 
-// import { Link } from "react-router-dom";
-// import { styles } from "./Home";
-
-
-
 const router = createBrowserRouter([
   {
     path: "/",
@@ -34,17 +29,6 @@ function App() {
   return (
     <div className="App">
       <header className="">
-
-      {/* <Link style={styles.link} to={'/expense'}>
-            Expenses
-          </Link>
-          <Link style={styles.link} to={'/gallery'}>
-            Gallery
-          </Link>
-          <Link style={styles.link} to={'/about'}>
-            About
-          </Link> */}
-
       </header>
       <RouterProvider router={router}/>
     </div>
