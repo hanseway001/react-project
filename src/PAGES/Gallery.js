@@ -98,12 +98,11 @@ export default function Gallery({ handleBack }) {
         {/* {listOfImages1.map(catData => <img key={catData.id} src={catData.url} height={auto} width={400} />) } */}
         <img src={modalImage} height={auto} width={400} />
 
-          {/* <Typography id="modal-modal-title" variant="h6" component="h2">
-            Text in a modal
+          <Typography id="modal-modal-title" variant="h6" component="h2">
+            This is a cat
           </Typography>
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-          </Typography> */}
+          </Typography>
         </Box>
       </Modal>
     </div>
