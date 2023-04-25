@@ -1,9 +1,9 @@
 import './App.css';
 import { RouterProvider, createBrowserRouter} from 'react-router-dom';
-import Expense from './pages/Expense'
-import Gallery from './pages/Gallery'
-import Home from './pages/Home'
-import About from './pages/About'
+import Expense from './pages/Expense';
+import Gallery from './pages/Gallery';
+import Home from './pages/Home';
+import About from './pages/About';
 
 const router = createBrowserRouter([
   {
@@ -31,7 +31,6 @@ function App() {
       <header className="">
       </header>
       <RouterProvider router={router}/>
-
     </div>
   );
 }

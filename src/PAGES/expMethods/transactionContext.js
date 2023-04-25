@@ -16,8 +16,9 @@ export function TransactionProvider({ children }) {
  
   <TransactionContext.Provider value={state}>
   <TransactionDispatchContext.Provider value={dispatch}>
-
-    {children}
+    <div className='expenseApp'>
+      {children}
+    </div>
  
   </TransactionDispatchContext.Provider>
   </TransactionContext.Provider>
@@ -34,8 +35,7 @@ export function useTransactionDispatch() {
 }
 
 function transactionReducer(state, action) {
-  // console.log('this is state ' + state)
-  // console.log("this is action " + action)
+
   switch ( action.type ) {
     case  "ADD_TRANSACTION":
       return [
@@ -44,13 +44,12 @@ function transactionReducer(state, action) {
           description: action.description,
           amount: action.amount
       }];
-
-      case "DELETE_TRANSACTION":
-        return state.filter(
-          (transactionObject) => transactionObject.id !== action.id
-        );
+    case "DELETE_TRANSACTION":
+      return state.filter(
+        (transactionObject) => transactionObject.id !== action.id
+      );
         
-      default: throw new Error("Invalid Action Type");
+    default: throw new Error("Invalid Action Type");
   }
 }
 

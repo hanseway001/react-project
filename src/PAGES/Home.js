@@ -1,5 +1,5 @@
 import React from "react";
-import { Outlet, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export const styles = {
   link: {
@@ -8,7 +8,7 @@ export const styles = {
   }
 };
 
-export default function Home({ changePage }) {
+export default function Home() {
   return (
     <div className="App">
       <h1>Welcome to my website</h1>
